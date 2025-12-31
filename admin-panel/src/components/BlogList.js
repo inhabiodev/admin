@@ -96,7 +96,7 @@ const BlogList = () => {
               <div key={blog._id} className="blog-card">
                 {blog.image && (
                   <div className="blog-image">
-                    <img src={`http://localhost:5000/${blog.image}`} alt={blog.title} />
+                    <img src={blog.image} alt={blog.title} />
                   </div>
                 )}
                 <div className="blog-content">

@@ -80,7 +80,7 @@ const BlogPreview = () => {
       <article className="blog-article">
         {blog.image && (
           <div className="article-hero-image">
-            <img src={`http://localhost:5000/${blog.image}`} alt={blog.title} />
+            <img src={blog.image} alt={blog.title} />
           </div>
         )}
 

@@ -23,7 +23,7 @@ exports.createBlogPost = async (req, res) => {
 
     // Handle image upload if present
     if (req.file) {
-      blogData.image = req.file.path;
+      blogData.image = req.file.location; // S3/Spaces URL
     }
 
     const blogPost = new BlogPost(blogData);
@@ -163,7 +163,7 @@ exports.updateBlogPost = async (req, res) => {
 
     // Handle image upload if present
     if (req.file) {
-      updateData.image = req.file.path;
+      updateData.image = req.file.location; // S3/Spaces URL
     }
 
     const blogPost = await BlogPost.findByIdAndUpdate(

@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+admin-panel/node_modules/
+
+# Environment variables
+.env
+admin-panel/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Uploads
+uploads/*
+!uploads/.gitkeep
+
+# React Build
+admin-panel/build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

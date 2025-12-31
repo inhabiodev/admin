@@ -52,7 +52,7 @@ const BlogForm = () => {
       });
 
       if (blog.image) {
-        setImagePreview(`http://localhost:5000/${blog.image}`);
+        setImagePreview(blog.image);
       }
     } catch (err) {
       setError(err.message || 'Failed to fetch blog');

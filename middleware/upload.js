@@ -1,14 +1,27 @@
 const multer = require('multer');
+const multerS3 = require('multer-s3');
+const { S3Client } = require('@aws-sdk/client-s3');
 const path = require('path');
 
+// Configure DigitalOcean Spaces with AWS SDK v3
+const s3Client = new S3Client({
+  endpoint: `https://${process.env.DO_SPACES_ENDPOINT}`,
+  region: process.env.DO_SPACES_REGION,
+  credentials: {
+    accessKeyId: process.env.DO_SPACES_KEY,
+    secretAccessKey: process.env.DO_SPACES_SECRET
+  }
+});
+
 // Configure storage
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/');
-  },
-  filename: function (req, file, cb) {
+const storage = multerS3({
+  s3: s3Client,
+  bucket: process.env.DO_SPACES_BUCKET,
+  acl: 'public-read',
+  contentType: multerS3.AUTO_CONTENT_TYPE,
+  key: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, 'blog-' + uniqueSuffix + path.extname(file.originalname));
+    cb(null, 'blog-images/blog-' + uniqueSuffix + path.extname(file.originalname));
   }
 });
 
