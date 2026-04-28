@@ -31,8 +31,8 @@ const blogPostSchema = new mongoose.Schema({
         'appliance care',
         'flooring care',
         'home painting',
-        'bathroom remodeling',
-        'kitchen remodeling'
+        'bathroom remodel',
+        'kitchen remodel'
       ],
       message: '{VALUE} is not a valid tag'
     },
