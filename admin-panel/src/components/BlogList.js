@@ -16,8 +16,8 @@ const BlogList = () => {
     'appliance care',
     'flooring care',
     'home painting',
-    'bathroom remodeling',
-    'kitchen remodeling'
+    'bathroom remodel',
+    'kitchen remodel'
   ];
 
   const fetchBlogs = React.useCallback(async () => {
