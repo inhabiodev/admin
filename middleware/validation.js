@@ -99,8 +99,8 @@ const updateBlogPostValidation = [
       'appliance care',
       'flooring care',
       'home painting',
-      'bathroom remodeling',
-      'kitchen remodeling'
+      'bathroom remodel',
+      'kitchen remodel'
     ])
     .withMessage('Invalid tag value'),
 
