@@ -31,8 +31,8 @@ const BlogForm = () => {
     'appliance care',
     'flooring care',
     'home painting',
-    'bathroom remodeling',
-    'kitchen remodeling'
+    'bathroom remodel',
+    'kitchen remodel'
   ];
 
   const fetchBlog = React.useCallback(async () => {
